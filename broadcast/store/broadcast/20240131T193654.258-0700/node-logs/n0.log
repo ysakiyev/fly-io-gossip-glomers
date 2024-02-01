@@ -1,0 +1,17 @@
+2024/01/31 19:36:55 Received {c0 n0 {"type":"init","node_id":"n0","node_ids":["n0"],"msg_id":1}}
+2024/01/31 19:36:55 Node n0 initialized
+2024/01/31 19:36:55 Sent {"src":"n0","dest":"c0","body":{"in_reply_to":1,"type":"init_ok"}}
+2024/01/31 19:36:55 Received {c1 n0 {"type":"topology","topology":{"n0":[]},"msg_id":1}}
+2024/01/31 19:36:55 Sent {"src":"n0","dest":"c1","body":{"in_reply_to":1,"msg_id":1,"type":"topology_ok"}}
+2024/01/31 19:36:55 Received {c2 n0 {"type":"broadcast","message":0,"msg_id":1}}
+panic: interface conversion: interface {} is float64, not int
+
+goroutine 33 [running]:
+main.main.func2({{0x14000184390, 0x2}, {0x14000184392, 0x2}, {0x140001a4060, 0x2b, 0x30}})
+	/Users/ysakiyev/fly-io/broadcast/main.go:38 +0x2b8
+github.com/jepsen-io/maelstrom/demo/go.(*Node).handleMessage(0x0?, 0x0?, {{0x14000184390, 0x2}, {0x14000184392, 0x2}, {0x140001a4060, 0x2b, 0x30}})
+	/Users/ysakiyev/GolandProjects/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20231231190402-2674df7c1076/node.go:151 +0x6c
+github.com/jepsen-io/maelstrom/demo/go.(*Node).Run.func2()
+	/Users/ysakiyev/GolandProjects/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20231231190402-2674df7c1076/node.go:129 +0x78
+created by github.com/jepsen-io/maelstrom/demo/go.(*Node).Run
+	/Users/ysakiyev/GolandProjects/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20231231190402-2674df7c1076/node.go:127 +0x44c
